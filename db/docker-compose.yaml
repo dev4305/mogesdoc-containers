@@ -1,0 +1,17 @@
+# contraseña root: desarrollo
+version: '3.1'
+
+services:
+  mogesdocdatab:
+    image: mariadb:latest
+    restart: always
+    container_name: mogesdocdatab
+    environment:
+      - MARIADB_ROOT_PASSWORD=desarrollo
+      - MARIADB_DATABASE=MOGESDOC
+      - MARIADB_USER=root
+    volumes:
+      - D:\proyecto_aurora\mogesdoc_migration:/docker-entrypoint-initdb.d
+      - D:\proyecto_aurora\container\volumes:/var/lib/mysql
+    ports:
+      - 6060:3306

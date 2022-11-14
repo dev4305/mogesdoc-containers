@@ -1,0 +1,15 @@
+# backend mogesdoc
+version: '3.1'
+
+services:
+  api-backend:
+    image: mogesdoc-backend
+    #restart: always
+    container_name: api-backend
+    environment:
+      - MARIADB_PASSWORD=desarrollo
+      - MARIADB_HOST=172.21.38.38
+      - MARIADB_PORT=6060
+      - MARIADB_USER=root
+    ports:
+      - 7070:7070
