@@ -11,7 +11,9 @@ services:
       - MARIADB_DATABASE=MOGESDOC
       - MARIADB_USER=root
     volumes:
-      - D:\proyecto_aurora\mogesdoc_migration:/docker-entrypoint-initdb.d
-      - D:\proyecto_aurora\container\volumes:/var/lib/mysql
+      #- D:\proyecto_aurora\mogesdoc_migration:/docker-entrypoint-initdb.d
+      #- D:\proyecto_aurora\container\volumes:/var/lib/mysql
+      - ~/Documents/tcci/containers/volumes/mogesdocdb:/var/lib/mysql
+      - ~/Documents/tcci/repo/mogesdoc-containers/db:/docker-entrypoint-initdb.d
     ports:
       - 6060:3306

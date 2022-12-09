@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  keycloak:
+    image: mogesdoc-sso:latest
+    container_name: auth_sso
+    environment:
+      KEYCLOAK_ADMIN: "admin"
+      KEYCLOAK_ADMIN_PASSWORD: "admin"
+      KC_HOSTNAME_PORT: "3900"
+    command:
+      - start --optimized
+    ports:
+      - 3900:8443
+      - 8787:8787
