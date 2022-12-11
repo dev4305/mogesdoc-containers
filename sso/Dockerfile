@@ -19,5 +19,5 @@ COPY --from=builder /opt/keycloak/ /opt/keycloak/
 ENV KC_DB_URL=jdbc:mariadb://192.168.1.20:6060/keycloak
 ENV KC_DB_USERNAME=root
 ENV KC_DB_PASSWORD=desarrollo
-ENV KC_HOSTNAME=localhost
+ENV KC_HOSTNAME=192.168.1.20
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
